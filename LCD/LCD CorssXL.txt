@@ -1,0 +1,143 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+byte cross1[8] = {
+ B00000,
+  B00000,
+  B00000,
+  B00001,
+  B00001,
+  B00001,
+  B01111,
+  B01111
+};
+
+byte cross2[8] = {
+ B00000,
+  B00000,
+  B00000,
+  B10000,
+  B10000,
+  B10000,
+  B11110,
+  B11110
+};
+
+
+byte cross3[8] = {
+  B01111,
+  B01111,
+  B00001,
+  B00001,
+  B00001,
+  B00000,
+  B00000,
+  B00000
+};
+
+
+byte cross4[8] = {
+   B11110,
+  B11110,
+  B10000,
+  B10000,
+  B10000,
+  B00000,
+  B00000,
+  B00000
+};
+
+
+byte xl1[8] = {
+    B00000,
+  B00000,
+  B00000,
+  B01000,
+  B01100,
+  B00110,
+  B00011,
+  B00001
+};
+
+byte xl2[8] = {
+  B00000,
+  B00000,
+  B00000,
+  B00010,
+  B00110,
+  B01100,
+  B11000,
+  B10000
+};
+
+byte xl3[8] = {
+  B10001,
+  B10011,
+  B10110,
+  B10100,
+  B11000,
+  B11000,
+  B00000,
+  B00000
+};
+
+
+byte xl4[8] = {
+ B10001,
+  B11001,
+  B01101,
+  B00111,
+  B00011,
+  B00011,
+  B00000,
+  B00000
+};
+
+
+int bt1 = 12;    
+
+void setup() {
+
+ lcd.begin(16, 2);
+  lcd.createChar(0, cross1);
+  lcd.createChar(1, cross2);
+  lcd.createChar(2, cross3);
+  lcd.createChar(3, cross4);
+  lcd.createChar(4, xl1);
+  lcd.createChar(5, xl2);
+	lcd.createChar(6, xl3);
+  lcd.createChar(7, xl4);
+
+}
+
+
+
+
+void loop() {
+  
+
+ lcd.setCursor(14, 0);
+  lcd.print((char)0);
+   lcd.print((char)1);
+   lcd.setCursor(14, 1);
+  lcd.print((char)2);
+  lcd.print((char)3);
+ 
+  
+ 
+
+  
+  
+lcd.setCursor(0, 0);
+    lcd.print((char)4);
+   lcd.print((char)5);
+lcd.setCursor(0, 1);
+ lcd.print((char)6);
+   lcd.print((char)7);
+
+  
+
+
+   
+}

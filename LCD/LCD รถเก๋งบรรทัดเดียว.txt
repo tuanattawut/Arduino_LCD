@@ -1,0 +1,151 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+byte car1[8] = {
+ B00001,
+  B00011,
+  B00111,
+  B01110,
+  B11111,
+  B01111,
+  B00011,
+  B00001
+};
+
+byte car2[8] = {
+B11111,
+  B10001,
+  B00001,
+  B00001,
+  B11111,
+  B11111,
+  B11000,
+  B10000
+};
+
+
+byte car3[8] = {
+   B11100,
+  B00011,
+  B00000,
+  B00000,
+  B11111,
+  B11111,
+  B00001,
+  B00000
+};
+
+
+byte car4[8] = {
+   B00000,
+  B10000,
+  B11100,
+  B00110,
+  B11111,
+  B11110,
+  B11000,
+  B11000
+};
+
+
+byte geng1[8] = {
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00100,
+  B00100,
+  B00100,
+  B00110
+};
+
+byte geng2[8] = {
+  B00100,
+  B01110,
+  B00100,
+  B00000,
+  B01110,
+  B11010,
+  B01010,
+  B01010
+};
+
+byte geng3[8] = {
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00011,
+  B01001,
+  B00101,
+  B00011
+};
+
+
+
+
+
+  
+
+void setup() {
+
+ lcd.begin(16, 2);
+  lcd.createChar(0, car1);
+  lcd.createChar(1, car2);
+  lcd.createChar(2, car3);
+  lcd.createChar(3, car4);
+  lcd.createChar(4, geng1);
+  lcd.createChar(5, geng2);
+  lcd.createChar(6, geng3);
+
+   initialDisplay();
+}
+
+
+
+
+void loop() {
+  
+scrollTextDisplay();
+
+}
+
+
+void initialDisplay(){
+  
+  lcd.setCursor(0, 0);
+  lcd.print((char)0);
+   lcd.print((char)1);
+  lcd.print((char)2);
+  lcd.print((char)3);
+  
+ lcd.setCursor(13, 1);
+ lcd.print((char)4);
+   lcd.print((char)5);
+  lcd.print((char)6);
+  
+  
+}
+
+
+void scrollTextDisplay(){
+  
+  
+for (int couter = 0; couter < 13; couter++) {
+  lcd.scrollDisplayRight(); 
+ delay(20);
+ }
+for (int couter = 0; couter < 29; couter++) {
+ 
+lcd.scrollDisplayLeft(); 
+ delay(1000);
+ }
+
+ for (int couter = 0; couter < 16; couter++) {
+lcd.scrollDisplayRight();
+ delay(200);
+ }
+  
+  
+}

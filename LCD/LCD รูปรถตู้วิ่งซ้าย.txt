@@ -1,0 +1,132 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+byte van1[8] = {
+B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00011,
+  B01111
+};
+
+byte van2[8] = {
+B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00011,
+  B11100,
+  B11000,
+  B10000
+};
+
+
+byte van3[8] = {
+B00000,
+  B00000,
+  B00000,
+  B00000,
+  B11111,
+  B10000,
+  B10000,
+  B10000
+};
+
+
+byte van4[8] = {
+B00000,
+  B00000,
+  B00000,
+  B00000,
+  B11100,
+  B01110,
+  B01110,
+  B01110
+};
+
+
+byte van5[8] = {
+ B11111,
+  B11111,
+  B00011,
+  B00001,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+byte van6[8] = {
+B11111,
+  B11111,
+  B11000,
+  B10000,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+byte van7[8] = {
+  B11111,
+  B11111,
+  B00001,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+
+byte van8[8] = {
+ B11111,
+  B11110,
+  B11100,
+  B11000,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+void setup() {
+
+ lcd.begin(16, 2);
+  lcd.createChar(0, van1);
+  lcd.createChar(1, van2);
+  lcd.createChar(2, van3);
+  lcd.createChar(3, van4);
+  lcd.createChar(4, van5);
+  lcd.createChar(5, van6);
+lcd.createChar(6, van7);
+  lcd.createChar(7, van8);
+
+}
+
+void loop() {
+  
+
+ lcd.setCursor(12, 0);
+  lcd.print((char)0);
+   lcd.print((char)1);
+   lcd.print((char)2);
+ lcd.print((char)3);
+   lcd.setCursor(12, 1);
+  lcd.print((char)4);
+  lcd.print((char)5);
+    lcd.print((char)6);
+  lcd.print((char)7);
+
+
+   
+lcd.scrollDisplayLeft();
+  delay(1000);
+
+
+   
+}

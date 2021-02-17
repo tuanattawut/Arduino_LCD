@@ -1,0 +1,97 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+byte customrorrer[8] = {
+	 B01110,
+  B01000,
+  B01110,
+  B00010,
+  B00010,
+  B01110,
+  B01010,
+  B01110
+};
+byte customtortung[8] = {
+	B11111,
+  B10001,
+  B11001,
+  B01001,
+  B01001,
+  B01001,
+  B01101,
+  B01101
+};
+byte customsaraae[8] = {
+  B00100,
+  B00100,
+  B00100,
+  B00100,
+  B00100,
+  B00100,
+  B00110,
+  B00110
+};
+
+byte customkorkai[8] = {
+  B01111,
+  B10001,
+  B10001,
+  B01001,
+  B01001,
+  B01001,
+  B01001,
+  B01001
+};
+byte customngu[8] = {
+  B00111,
+  B00101,
+  B00111,
+  B10001,
+  B01001,
+  B00101,
+  B00011,
+  B00001
+};
+byte custommaijud[8] = {
+  B00000,
+  B00000,
+  B00100,
+  B00100,
+  B11111,
+  B00100,
+  B00100,
+  B00000
+};
+unsigned int i=0;
+
+void setup() {
+
+
+
+  lcd.createChar(0, customrorrer);
+  lcd.createChar(1, customtortung);
+  lcd.createChar(2, customsaraae);
+  lcd.createChar(3, customkorkai);
+ lcd.createChar(4, customngu);
+  lcd.createChar(5, custommaijud);
+    lcd.begin(16, 2);
+
+
+
+}
+
+void loop() {
+  
+  lcd.setCursor(3, 0);
+  lcd.print((char)5);   lcd.setCursor(0, 1);
+  lcd.print((char)0);
+  lcd.print((char)1);
+  lcd.print((char)2);
+  lcd.print((char)3);
+  lcd.print((char)4);
+  lcd.scrollDisplayRight();
+  delay(1000);
+
+
+   
+}

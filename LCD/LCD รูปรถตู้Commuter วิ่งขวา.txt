@@ -1,0 +1,132 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+byte commuter1[8] = {
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B11111,
+  B10010,
+  B10010,
+  B11111
+};
+
+byte commuter2[8] = {
+ B00000,
+  B00000,
+  B00000,
+  B00000,
+  B11111,
+  B00100,
+  B00100,
+  B11111
+};
+
+
+byte commuter3[8] = {
+ B00000,
+  B00000,
+  B00000,
+  B00000,
+  B11111,
+  B10010,
+  B10010,
+  B11111
+};
+
+
+byte commuter4[8] = {
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B11000,
+  B01100,
+  B00110,
+  B11110
+};
+
+
+byte commuter5[8] = {
+  B11111,
+  B11111,
+  B00111,
+  B00010,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+byte commuter6[8] = {
+   B11111,
+  B11111,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+byte commuter7[8] = {
+  B11111,
+  B11111,
+  B00001,
+  B00000,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+
+byte commuter8[8] = {
+ B11111,
+  B11110,
+  B11000,
+  B10000,
+  B00000,
+  B00000,
+  B00000,
+  B00000
+};
+
+void setup() {
+
+ lcd.begin(16, 2);
+  lcd.createChar(0, commuter1);
+  lcd.createChar(1, commuter2);
+  lcd.createChar(2, commuter3);
+  lcd.createChar(3, commuter4);
+  lcd.createChar(4, commuter5);
+  lcd.createChar(5, commuter6);
+lcd.createChar(6, commuter7);
+  lcd.createChar(7, commuter8);
+
+}
+
+void loop() {
+  
+
+ lcd.setCursor(0, 0);
+  lcd.print((char)0);
+   lcd.print((char)1);
+   lcd.print((char)2);
+ lcd.print((char)3);
+   lcd.setCursor(0, 1);
+  lcd.print((char)4);
+  lcd.print((char)5);
+    lcd.print((char)6);
+  lcd.print((char)7);
+
+
+   
+lcd.scrollDisplayRight();
+  delay(1000);
+
+
+   
+}

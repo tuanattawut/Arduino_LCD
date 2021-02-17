@@ -1,0 +1,21 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+unsigned int i=0;
+
+void setup() {
+  lcd.begin(16,2);
+}
+
+void loop() {
+  lcd.setCursor(16, 0);
+  lcd.print("Nattawut Tonkluay");
+  lcd.setCursor(0, 0);
+  lcd.print("116140462027-9");
+  lcd.setCursor(16, 1);
+  lcd.print(" ComputerEngineer");
+  lcd.setCursor(0, 1);
+  lcd.print("Rajamangala U.Th");
+  lcd.scrollDisplayRight();
+  delay(500);
+}
