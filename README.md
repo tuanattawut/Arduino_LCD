@@ -1,2 +1,2 @@
 # Project ภาษา C 
-เขียน Arduino จอLCD ให้แสดงเป็นรูป
+Arduino จอLCD เขียนภาษา C ให้แสดงเป็นรูป
